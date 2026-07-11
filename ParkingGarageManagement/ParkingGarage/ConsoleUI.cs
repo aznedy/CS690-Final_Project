@@ -25,9 +25,11 @@ public class ConsoleUI {
                                 }));
 
             if(command=="record entry") {
-
+                Console.WriteLine("Available spots: "+dataManager.AvailableSpots());
                 if(dataManager.IsFull()) {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("The garage is full! Entry is blocked.");
+                    Console.ResetColor();
                 } else {
                     var vehicleTag = AnsiConsole.Prompt(new TextPrompt<string>("Enter vehicle tag:"));
                     Vehicle vehicle = new Vehicle(vehicleTag, DateTime.Now);
