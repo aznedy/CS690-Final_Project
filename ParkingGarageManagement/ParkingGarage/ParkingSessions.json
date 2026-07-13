@@ -1,0 +1,50 @@
+[
+  {
+    "Entry_Time": "20260709010101",
+    "Vehicle_Tag": "ABC123",
+    "Assigned_Space": "14",
+    "Exit_Time": "20260711115503",
+    "Amount_Charged": 350.00,
+    "Amount_Paid": null
+  },
+  {
+    "Entry_Time": "20260711101037",
+    "Vehicle_Tag": "HH1277I",
+    "Assigned_Space": "11",
+    "Exit_Time": "20260711101144",
+    "Amount_Charged": 5.00,
+    "Amount_Paid": null
+  },
+  {
+    "Entry_Time": "20260711115423",
+    "Vehicle_Tag": "YYYU78",
+    "Assigned_Space": "11",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null
+  },
+  {
+    "Entry_Time": "20260711123134",
+    "Vehicle_Tag": "A",
+    "Assigned_Space": "12",
+    "Exit_Time": "20260711123145",
+    "Amount_Charged": 5.00,
+    "Amount_Paid": null
+  },
+  {
+    "Entry_Time": "20260711130711",
+    "Vehicle_Tag": "YELLOW",
+    "Assigned_Space": "12",
+    "Exit_Time": "20260712152514",
+    "Amount_Charged": 158.00,
+    "Amount_Paid": null
+  },
+  {
+    "Entry_Time": "20260712172248",
+    "Vehicle_Tag": "AAJ2KL9",
+    "Assigned_Space": "12",
+    "Exit_Time": "20260712172303",
+    "Amount_Charged": 5.00,
+    "Amount_Paid": null
+  }
+]

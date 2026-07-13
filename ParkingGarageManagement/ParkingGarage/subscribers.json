@@ -1,0 +1,20 @@
+[
+  {
+    "Subscriber_Name": "Mister Jones",
+    "Assigned_Spot": "7",
+    "Vehicle_Tag": "LUVTOAD",
+    "Subscription_Expiry": "20260930"
+  },
+  {
+    "Subscriber_Name": "Fuzzy Knuckles",
+    "Assigned_Spot": "4",
+    "Vehicle_Tag": "JLLY30",
+    "Subscription_Expiry": "20270228"
+  },
+  {
+    "Subscriber_Name": "Jack Flores",
+    "Assigned_Spot": "6",
+    "Vehicle_Tag": "BFF8979",
+    "Subscription_Expiry": "20271026"
+  }
+]

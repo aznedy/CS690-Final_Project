@@ -1,9 +1,9 @@
 namespace ParkingGarage;
 
 public class FeeCalculator {
-    public static decimal CalculateFee(Vehicle vehicle, DateTime exitTime, RateSchedule rateSchedule) {
+    public static decimal CalculateFee(DateTime entryTime, DateTime exitTime, RateSchedule rateSchedule) {
         // FR-07: calculate the parking fee from the entry and exit timestamps
-        TimeSpan duration = exitTime - vehicle.EntryTime;
+        TimeSpan duration = exitTime - entryTime;
         int billableHours = (int)Math.Ceiling(duration.TotalHours);
 
         if(billableHours < 0) {
