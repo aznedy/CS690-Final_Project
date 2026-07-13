@@ -72,7 +72,7 @@ public class ConsoleUI {
 
         if(dataManager.IsFull()) {
             AnsiConsole.Write(new Panel(new Markup("[red]The garage is full! Entry is blocked.[/]"))
-                .Header("[red]FR-02 · Full[/]").BorderColor(Color.Red));
+                .Header("[red]Full[/]").BorderColor(Color.Red));
             Pause();
             return;
         }
@@ -158,9 +158,8 @@ public class ConsoleUI {
         Pause();
     }
 
-    // Reserved designation wins: a reserved spot always shows [R]/[U] from
-    // subscribers.json, regardless of any ad hoc occupancy. Only general spots
-    // ever show [O]/[A].
+    // Reserved designation wins: a reserved spot always shows [R]/[U] from subcribers.json
+    // v3 will include assignment of U spots, changing to [O], temporarily.
     string RenderSpot(string spot) {
         if(dataManager.IsReserved(spot)) {
             if(dataManager.ActiveSubscriberForSpot(spot) != null) {
@@ -242,7 +241,7 @@ public class ConsoleUI {
                     .UseConverter(s => Markup.Escape($"{s.Name}  (spot {s.AssignedSpot}, tag {s.VehicleTag})"))
                     .AddChoices(dataManager.Subscribers));
 
-        // edit a working copy so a cancel leaves the original untouched
+        // edit a working copy so a cancel leaves the original intact
         var working = new Subscriber {
             Name = original.Name,
             AssignedSpot = original.AssignedSpot,
