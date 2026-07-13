@@ -1,0 +1,9 @@
+{
+  "Capacity": 50,
+  "BaseRatePerHour": 5.00,
+  "OvertimeRatePerHour": 6.00,
+  "AllowedHours": 4,
+  "ReservedSpots": [
+    "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"
+  ]
+}
