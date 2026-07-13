@@ -57,3 +57,17 @@ public class ParkingSession {
         return DateTime.ParseExact(EntryTime, "yyyyMMddHHmmss", null);
     }
 }
+
+
+public class FeeBreakdown {
+    public TimeSpan Duration { get; init; }
+    public int BillableHours { get; init; }
+    public int BaseHours { get; init; }
+    public decimal BaseRatePerHour { get; init; } 
+    public decimal BaseFee { get; init; }
+    public decimal OvertimeHours { get; init; }
+    public decimal OvertimeRatePerHour { get; init; }
+    public decimal OvertimeFee { get; init; }
+    public decimal Total { get; init; }
+}
+

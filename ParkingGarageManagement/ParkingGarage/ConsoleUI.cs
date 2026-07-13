@@ -113,17 +113,23 @@ public class ConsoleUI {
                     .AddChoices(active));
 
         DateTime exitTime = DateTime.Now;
-        decimal fee = FeeCalculator.CalculateFee(selectedSession.EntryDateTime(), exitTime, dataManager.RateSchedule);
-        dataManager.RecordExit(selectedSession, exitTime, fee);
+        var breakdown = FeeCalculator.CalculateBreakdown(selectedSession.EntryDateTime(), exitTime, dataManager.RateSchedule);
+        dataManager.RecordExit(selectedSession, exitTime, breakdown.Total);
 
         var table = new Table().Border(TableBorder.Rounded).BorderColor(Color.Grey);
         table.AddColumn("Item");
         table.AddColumn(new TableColumn("Detail").RightAligned());
-        table.AddRow("Vehicle", Markup.Escape(selectedSession.VehicleTag));
-        table.AddRow("Spot", selectedSession.AssignedSpace);
-        table.AddRow("Entry", Pretty(selectedSession.EntryTime));
-        table.AddRow("Exit", Pretty(selectedSession.ExitTime!));
-        table.AddRow("[bold]Fee due[/]", $"[green]${fee}[/]");
+        table.AddColumn(new TableColumn("Amount").RightAligned());
+        table.AddRow("Vehicle", Markup.Escape(selectedSession.VehicleTag), "");
+        table.AddRow("Spot", selectedSession.AssignedSpace, "");
+        table.AddRow("Entry", Pretty(selectedSession.EntryTime), "");
+        table.AddRow("Exit", Pretty(selectedSession.ExitTime!), "");
+        table.AddRow("Duration", $"{(int)breakdown.Duration.TotalHours}h {breakdown.Duration.Minutes}m", "");
+        table.AddRow($"Base ({breakdown.BaseHours}h @ ${breakdown.BaseRatePerHour}/h)", "", $"${breakdown.BaseFee}");
+        if(breakdown.OvertimeHours > 0) {
+            table.AddRow($"[yellow]Overtime ({breakdown.OvertimeHours}h @ ${breakdown.OvertimeRatePerHour}/h)[/]", "", $"[yellow]${breakdown.OvertimeFee}[/]");
+        }
+        table.AddRow("[bold]Total due[/]", "", $"[bold green]${breakdown.Total}[/]");
         AnsiConsole.Write(table);
 
         AnsiConsole.MarkupLine($"Available spots: [green]{dataManager.AvailableSpots()}[/] / {dataManager.GeneralSpots().Count}");
