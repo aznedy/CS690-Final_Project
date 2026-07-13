@@ -47,11 +47,14 @@ public class ConsoleUI {
     }
 
     // -------- Record Entry ---------
-
+    // It may be worthwhile to add the vehicleTag state 
+    // in the case that two matching license plates from different states exist. 
     void RecordEntry() {
         AnsiConsole.Clear();
         AnsiConsole.Write(new Rule("[green]Record Entry[/]").LeftJustified().RuleStyle("green"));
 
+        // TODO: present an option to select from subscriber plates, instead of manual entry. 
+        // The potential to incorrectly enter the vehicleTag could cause data integrity issues.
         var vehicleTag = AnsiConsole.Prompt(
                 new TextPrompt<string>("Enter [green]vehicle tag[/]:")
                     .PromptStyle("aqua")
@@ -159,7 +162,7 @@ public class ConsoleUI {
     }
 
     // Reserved designation wins: a reserved spot always shows [R]/[U] from subcribers.json
-    // v3 will include assignment of U spots, changing to [O], temporarily.
+    // v3 will include assignment of [U] spots, changing to [O], temporarily.
     string RenderSpot(string spot) {
         if(dataManager.IsReserved(spot)) {
             if(dataManager.ActiveSubscriberForSpot(spot) != null) {
@@ -173,7 +176,7 @@ public class ConsoleUI {
         return $"[green]{spot} [[A]][/]";
     }
 
-    // ---------------- manage subscribers ----------------
+    // ---------------- Manage Subscribers ----------------
 
     void ManageSubscribers() {
         string action;

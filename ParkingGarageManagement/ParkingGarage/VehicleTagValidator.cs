@@ -2,6 +2,7 @@ namespace ParkingGarage;
 
 using System.Text.RegularExpressions;
 
+// This class validates that vehicleTags don't contain bad characters.
 public class VehicleTagValidator {
     // 3-9 characters, letters and digits only (no spaces or punctuation)
     static readonly Regex Pattern = new Regex("^[A-Za-z0-9]{3,9}$");

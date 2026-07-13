@@ -1,6 +1,8 @@
 namespace ParkingGarage;
 
 public class FeeCalculator {
+
+    //TODO: Add a 15 minute grace period, in case the customer entered the garage in error. 
     public static decimal CalculateFee(DateTime entryTime, DateTime exitTime, RateSchedule rateSchedule) {
         // FR-07: calculate the parking fee from the entry and exit timestamps
         TimeSpan duration = exitTime - entryTime;

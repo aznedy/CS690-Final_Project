@@ -31,7 +31,7 @@ public class DataManager {
                 return config;
             }
         }
-        // write a starter config so the file always exists
+        // write a starter config so the file can be created on first launch
         var defaultConfig = new GarageConfig {
             Capacity = 50,
             BaseRatePerHour = 5.00m,
@@ -61,7 +61,7 @@ public class DataManager {
         File.WriteAllText(SubscribersFile, JsonSerializer.Serialize(Subscribers, jsonOptions));
     }
 
-    // ---------------- spot helpers ----------------
+    // ---------------- spot helper methods ----------------
 
     static int NormalizeSpot(string spot) {
         return int.TryParse(spot, out var n) ? n : -1;
