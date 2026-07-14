@@ -22,7 +22,7 @@ public class DataManager {
         Subscribers = LoadList<Subscriber>(SubscribersFile);
     }
 
-    // ---------------- persistence ----------------
+    // ---------------- Persistence ----------------
 
     GarageConfig LoadConfig() {
         if(File.Exists(ConfigFile)) {
@@ -61,7 +61,7 @@ public class DataManager {
         File.WriteAllText(SubscribersFile, JsonSerializer.Serialize(Subscribers, jsonOptions));
     }
 
-    // ---------------- spot helper methods ----------------
+    // ---------------- Spot Helper Methods ----------------
 
     static int NormalizeSpot(string spot) {
         return int.TryParse(spot, out var n) ? n : -1;
@@ -100,7 +100,9 @@ public class DataManager {
         return ActiveSessions().Any(session => NormalizeSpot(session.AssignedSpace) == n);
     }
 
-    // FR-01: the lowest-numbered general spot that no active session occupies
+    // The lowest-numbered general spot that no active session occupies
+    // TODO: Assign a spot that is further away to currently occupied spots.
+    // Customer statisfaction.
     public string? FindAvailableSpot() {
         foreach(var spot in GeneralSpots()) {
             if(!IsSpotOccupied(spot)) {
@@ -140,7 +142,7 @@ public class DataManager {
         SaveSubscribers();
     }
 
-    // ---------------- entry / exit ----------------
+    // ---------------- Entry / Exit ----------------
 
     // FR-03: record the entry timestamp for an ad hoc guest and assign a spot
     public ParkingSession RecordEntry(string vehicleTag, string assignedSpace) {
