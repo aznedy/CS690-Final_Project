@@ -15,4 +15,4 @@ final project. Built on .NET 10 with [Spectre.Console](https://spectreconsole.ne
 | FR-04 | Add / Remove / Modify subscriber data                             |
 | FR-13 | Display each parking spot's status (spot-status grid)             |
 | FR-09 | Display an itemized fee breakdown                                 |
-| FR-06 | Display the subscriber associated with a reserved parking spot    |
+| FR-06 | Display a report of subscribers including the assigned spot, associated vehicle tag and subscription expiration    |
