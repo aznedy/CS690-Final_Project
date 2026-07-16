@@ -1,50 +1,1723 @@
 [
   {
-    "Entry_Time": "20260709010101",
-    "Vehicle_Tag": "ABC123",
+    "Entry_Time": "20260708080642",
+    "Vehicle_Tag": "GZ5",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260708130642",
+    "Amount_Charged": 26.0,
+    "Amount_Paid": 26.0,
+    "Payments": [
+      {
+        "Amount": 26.0,
+        "Method": "Card",
+        "Timestamp": "20260708130712"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708083700",
+    "Vehicle_Tag": "9K2L",
+    "Assigned_Space": "25",
+    "Exit_Time": "20260708153700",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 22.8,
+        "Method": "Cash",
+        "Timestamp": "20260708153720"
+      },
+      {
+        "Amount": 15.2,
+        "Method": "Cash",
+        "Timestamp": "20260708153810"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708085420",
+    "Vehicle_Tag": "W2T41",
+    "Assigned_Space": "43",
+    "Exit_Time": "20260708135420",
+    "Amount_Charged": 26.0,
+    "Amount_Paid": 26.0,
+    "Payments": [
+      {
+        "Amount": 26.0,
+        "Method": "Cash",
+        "Timestamp": "20260708135450"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708123932",
+    "Vehicle_Tag": "WKQ1",
+    "Assigned_Space": "35",
+    "Exit_Time": "20260708141432",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Card",
+        "Timestamp": "20260708141502"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708133542",
+    "Vehicle_Tag": "A6UVJ",
+    "Assigned_Space": "19",
+    "Exit_Time": "20260708183542",
+    "Amount_Charged": 26.0,
+    "Amount_Paid": 26.0,
+    "Payments": [
+      {
+        "Amount": 15.6,
+        "Method": "Cash",
+        "Timestamp": "20260708183602"
+      },
+      {
+        "Amount": 10.4,
+        "Method": "Card",
+        "Timestamp": "20260708183652"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708133600",
+    "Vehicle_Tag": "5D2T",
+    "Assigned_Space": "48",
+    "Exit_Time": "20260708203600",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Cash",
+        "Timestamp": "20260708203630"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708151323",
+    "Vehicle_Tag": "89RC",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260708221323",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Card",
+        "Timestamp": "20260708221353"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708154148",
+    "Vehicle_Tag": "LT2MZ1",
+    "Assigned_Space": "18",
+    "Exit_Time": "20260708162648",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260708162718"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708171130",
+    "Vehicle_Tag": "6EN",
+    "Assigned_Space": "19",
+    "Exit_Time": "20260708175630",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260708175700"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708172937",
+    "Vehicle_Tag": "E8NM7BR",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260708193937",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 9.0,
+        "Method": "Card",
+        "Timestamp": "20260708193957"
+      },
+      {
+        "Amount": 6.0,
+        "Method": "Card",
+        "Timestamp": "20260708194047"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708183726",
+    "Vehicle_Tag": "GAHP",
+    "Assigned_Space": "45",
+    "Exit_Time": "20260708192226",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260708192256"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260708215235",
+    "Vehicle_Tag": "DXCW",
+    "Assigned_Space": "16",
+    "Exit_Time": "20260708223735",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260708223805"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709085308",
+    "Vehicle_Tag": "RUUJM5",
+    "Assigned_Space": "38",
+    "Exit_Time": "20260709155308",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Cash",
+        "Timestamp": "20260709155338"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709090320",
+    "Vehicle_Tag": "6I3J",
+    "Assigned_Space": "26",
+    "Exit_Time": "20260709111320",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260709111350"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709093607",
+    "Vehicle_Tag": "UEE4",
+    "Assigned_Space": "13",
+    "Exit_Time": "20260709163607",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Cash",
+        "Timestamp": "20260709163637"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709095001",
+    "Vehicle_Tag": "JIXE9RB",
+    "Assigned_Space": "43",
+    "Exit_Time": "20260709112501",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Card",
+        "Timestamp": "20260709112531"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709123732",
+    "Vehicle_Tag": "7FZ2VF",
+    "Assigned_Space": "16",
+    "Exit_Time": "20260709144732",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260709144802"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709125800",
+    "Vehicle_Tag": "FJ3",
+    "Assigned_Space": "40",
+    "Exit_Time": "20260709140800",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260709140830"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709144854",
+    "Vehicle_Tag": "WYSFX",
+    "Assigned_Space": "39",
+    "Exit_Time": "20260709151354",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260709151424"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709153619",
+    "Vehicle_Tag": "5XGF",
+    "Assigned_Space": "25",
+    "Exit_Time": "20260709171119",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260709171149"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709172425",
+    "Vehicle_Tag": "VQ8F0M7",
+    "Assigned_Space": "29",
+    "Exit_Time": "20260709185925",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Cash",
+        "Timestamp": "20260709185945"
+      },
+      {
+        "Amount": 4.0,
+        "Method": "Cash",
+        "Timestamp": "20260709190035"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709173823",
+    "Vehicle_Tag": "JHVRB9",
+    "Assigned_Space": "49",
+    "Exit_Time": "20260709235930",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 15.2,
+        "Method": "Cash",
+        "Timestamp": "20260709235950"
+      },
+      {
+        "Amount": 22.8,
+        "Method": "Card",
+        "Timestamp": "20260710000040"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709174412",
+    "Vehicle_Tag": "JMVSW",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260709185412",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Card",
+        "Timestamp": "20260709185442"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709175928",
+    "Vehicle_Tag": "7NPMR",
+    "Assigned_Space": "29",
+    "Exit_Time": "20260709193428",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Card",
+        "Timestamp": "20260709193448"
+      },
+      {
+        "Amount": 4.0,
+        "Method": "Card",
+        "Timestamp": "20260709193538"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709180925",
+    "Vehicle_Tag": "C37",
+    "Assigned_Space": "43",
+    "Exit_Time": "20260709235930",
+    "Amount_Charged": 32.0,
+    "Amount_Paid": 32.0,
+    "Payments": [
+      {
+        "Amount": 12.8,
+        "Method": "Card",
+        "Timestamp": "20260709235950"
+      },
+      {
+        "Amount": 19.2,
+        "Method": "Cash",
+        "Timestamp": "20260710000040"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260709181146",
+    "Vehicle_Tag": "T7EKE",
+    "Assigned_Space": "25",
+    "Exit_Time": "20260709211146",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260709211216"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710071029",
+    "Vehicle_Tag": "AU4L0Z2",
+    "Assigned_Space": "43",
+    "Exit_Time": "20260710141029",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Cash",
+        "Timestamp": "20260710141059"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710092219",
+    "Vehicle_Tag": "G5T15",
+    "Assigned_Space": "21",
+    "Exit_Time": "20260710132219",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Cash",
+        "Timestamp": "20260710132249"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710095841",
+    "Vehicle_Tag": "R65F",
+    "Assigned_Space": "21",
+    "Exit_Time": "20260710135841",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Cash",
+        "Timestamp": "20260710135911"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710104247",
+    "Vehicle_Tag": "Y9K3",
+    "Assigned_Space": "26",
+    "Exit_Time": "20260710174247",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Card",
+        "Timestamp": "20260710174317"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710115950",
+    "Vehicle_Tag": "N2N8U",
+    "Assigned_Space": "11",
+    "Exit_Time": "20260710124450",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260710124520"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710123027",
+    "Vehicle_Tag": "RKNGYXF",
+    "Assigned_Space": "26",
+    "Exit_Time": "20260710153027",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260710153057"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710142039",
+    "Vehicle_Tag": "5IZSK",
+    "Assigned_Space": "33",
+    "Exit_Time": "20260710153039",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260710153059"
+      },
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260710153149"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710142253",
+    "Vehicle_Tag": "KUI9133",
+    "Assigned_Space": "50",
+    "Exit_Time": "20260710153253",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Card",
+        "Timestamp": "20260710153313"
+      },
+      {
+        "Amount": 4.0,
+        "Method": "Cash",
+        "Timestamp": "20260710153403"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710160835",
+    "Vehicle_Tag": "UDZPAN",
+    "Assigned_Space": "49",
+    "Exit_Time": "20260710190835",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260710190905"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710163246",
+    "Vehicle_Tag": "I8VPR",
+    "Assigned_Space": "25",
+    "Exit_Time": "20260710203246",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Cash",
+        "Timestamp": "20260710203316"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710175454",
+    "Vehicle_Tag": "090BE",
+    "Assigned_Space": "11",
+    "Exit_Time": "20260710181954",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260710182024"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260710201134",
+    "Vehicle_Tag": "GS16",
+    "Assigned_Space": "33",
+    "Exit_Time": "20260710235930",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Card",
+        "Timestamp": "20260711000000"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711072055",
+    "Vehicle_Tag": "JLSZ65",
+    "Assigned_Space": "49",
+    "Exit_Time": "20260711122055",
+    "Amount_Charged": 26.0,
+    "Amount_Paid": 26.0,
+    "Payments": [
+      {
+        "Amount": 13.0,
+        "Method": "Card",
+        "Timestamp": "20260711122115"
+      },
+      {
+        "Amount": 13.0,
+        "Method": "Cash",
+        "Timestamp": "20260711122205"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711083301",
+    "Vehicle_Tag": "J8ZF",
     "Assigned_Space": "14",
-    "Exit_Time": "20260711115503",
-    "Amount_Charged": 350.00,
-    "Amount_Paid": null
+    "Exit_Time": "20260711094301",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260711094331"
+      }
+    ]
   },
   {
-    "Entry_Time": "20260711101037",
-    "Vehicle_Tag": "HH1277I",
+    "Entry_Time": "20260711092214",
+    "Vehicle_Tag": "2JC48",
+    "Assigned_Space": "19",
+    "Exit_Time": "20260711162214",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Card",
+        "Timestamp": "20260711162244"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711094000",
+    "Vehicle_Tag": "2JP",
+    "Assigned_Space": "12",
+    "Exit_Time": "20260711102500",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260711102530"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711113949",
+    "Vehicle_Tag": "N0ZE",
+    "Assigned_Space": "32",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260711115930",
+    "Vehicle_Tag": "T6IX",
+    "Assigned_Space": "16",
+    "Exit_Time": "20260711140930",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260711141000"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711123224",
+    "Vehicle_Tag": "AVWL2",
+    "Assigned_Space": "22",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260711130122",
+    "Vehicle_Tag": "TLT",
+    "Assigned_Space": "28",
+    "Exit_Time": "20260711141122",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Card",
+        "Timestamp": "20260711141142"
+      },
+      {
+        "Amount": 4.0,
+        "Method": "Card",
+        "Timestamp": "20260711141232"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711134829",
+    "Vehicle_Tag": "313IWA",
+    "Assigned_Space": "50",
+    "Exit_Time": "20260711143329",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260711143359"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711135020",
+    "Vehicle_Tag": "693P",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260711205020",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Card",
+        "Timestamp": "20260711205050"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711142019",
+    "Vehicle_Tag": "7I7GHH3",
+    "Assigned_Space": "50",
+    "Exit_Time": "20260711212019",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Cash",
+        "Timestamp": "20260711212049"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711144040",
+    "Vehicle_Tag": "QTD",
+    "Assigned_Space": "46",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260711162631",
+    "Vehicle_Tag": "RGF3ZI3",
+    "Assigned_Space": "16",
+    "Exit_Time": "20260711212631",
+    "Amount_Charged": 26.0,
+    "Amount_Paid": 26.0,
+    "Payments": [
+      {
+        "Amount": 26.0,
+        "Method": "Card",
+        "Timestamp": "20260711212701"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711164659",
+    "Vehicle_Tag": "MUX",
+    "Assigned_Space": "17",
+    "Exit_Time": "20260711204659",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Cash",
+        "Timestamp": "20260711204729"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711171113",
+    "Vehicle_Tag": "HWWLZ7",
+    "Assigned_Space": "33",
+    "Exit_Time": "20260711192113",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260711192143"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711171617",
+    "Vehicle_Tag": "5SFC",
+    "Assigned_Space": "19",
+    "Exit_Time": "20260711235930",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Cash",
+        "Timestamp": "20260712000000"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711175740",
+    "Vehicle_Tag": "PLI",
+    "Assigned_Space": "46",
+    "Exit_Time": "20260711193240",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Cash",
+        "Timestamp": "20260711193300"
+      },
+      {
+        "Amount": 4.0,
+        "Method": "Card",
+        "Timestamp": "20260711193350"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711180309",
+    "Vehicle_Tag": "NKM",
+    "Assigned_Space": "18",
+    "Exit_Time": "20260711201309",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260711201339"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260711183520",
+    "Vehicle_Tag": "P9XLNKZ",
+    "Assigned_Space": "26",
+    "Exit_Time": "20260711192020",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Card",
+        "Timestamp": "20260711192050"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712060730",
+    "Vehicle_Tag": "PWHM4",
+    "Assigned_Space": "41",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260712071444",
+    "Vehicle_Tag": "D84F5",
+    "Assigned_Space": "31",
+    "Exit_Time": "20260715070015",
+    "Amount_Charged": 428.00,
+    "Amount_Paid": 428.00,
+    "Payments": [
+      {
+        "Amount": 400,
+        "Method": "Cash",
+        "Timestamp": "20260715070024"
+      },
+      {
+        "Amount": 28.00,
+        "Method": "Card",
+        "Timestamp": "20260715070028"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712073749",
+    "Vehicle_Tag": "WQ12G",
+    "Assigned_Space": "30",
+    "Exit_Time": "20260715070357",
+    "Amount_Charged": 428.00,
+    "Amount_Paid": 428.00,
+    "Payments": [
+      {
+        "Amount": 428.00,
+        "Method": "Card",
+        "Timestamp": "20260715192213"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712074332",
+    "Vehicle_Tag": "9ZLYT",
+    "Assigned_Space": "36",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260712074545",
+    "Vehicle_Tag": "3IUCFG",
+    "Assigned_Space": "35",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260712075219",
+    "Vehicle_Tag": "DVWZK",
+    "Assigned_Space": "44",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260712080857",
+    "Vehicle_Tag": "BZ8X",
+    "Assigned_Space": "25",
+    "Exit_Time": "20260712083357",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260712083427"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712084159",
+    "Vehicle_Tag": "G3CI5",
+    "Assigned_Space": "12",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260712084401",
+    "Vehicle_Tag": "R8EA",
+    "Assigned_Space": "29",
+    "Exit_Time": "20260712105401",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260712105431"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712084656",
+    "Vehicle_Tag": "R3HPWC",
+    "Assigned_Space": "19",
+    "Exit_Time": "20260712114656",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Cash",
+        "Timestamp": "20260712114716"
+      },
+      {
+        "Amount": 9.0,
+        "Method": "Cash",
+        "Timestamp": "20260712114806"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712094350",
+    "Vehicle_Tag": "92ULG",
+    "Assigned_Space": "12",
+    "Exit_Time": "20260712100850",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260712100920"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712102250",
+    "Vehicle_Tag": "A5U8",
+    "Assigned_Space": "34",
+    "Exit_Time": "20260712113250",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260712113320"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712103852",
+    "Vehicle_Tag": "WEUX",
+    "Assigned_Space": "13",
+    "Exit_Time": "20260712143852",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Card",
+        "Timestamp": "20260712143922"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712110354",
+    "Vehicle_Tag": "LRMNW",
+    "Assigned_Space": "32",
+    "Exit_Time": "20260712112854",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260712112924"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712120109",
+    "Vehicle_Tag": "QFK5WW",
+    "Assigned_Space": "17",
+    "Exit_Time": "20260712160109",
+    "Amount_Charged": 20.0,
+    "Amount_Paid": 20.0,
+    "Payments": [
+      {
+        "Amount": 20.0,
+        "Method": "Card",
+        "Timestamp": "20260712160139"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712122043",
+    "Vehicle_Tag": "7F7U",
+    "Assigned_Space": "49",
+    "Exit_Time": "20260712152043",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260712152113"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712125835",
+    "Vehicle_Tag": "TQRG",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260712150835",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260712150905"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712130146",
+    "Vehicle_Tag": "6AVBK21",
+    "Assigned_Space": "12",
+    "Exit_Time": "20260712132646",
+    "Amount_Charged": 5.0,
+    "Amount_Paid": 5.0,
+    "Payments": [
+      {
+        "Amount": 5.0,
+        "Method": "Cash",
+        "Timestamp": "20260712132716"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712163920",
+    "Vehicle_Tag": "U5U1L",
+    "Assigned_Space": "47",
+    "Exit_Time": "20260712184920",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Cash",
+        "Timestamp": "20260712184940"
+      },
+      {
+        "Amount": 9.0,
+        "Method": "Cash",
+        "Timestamp": "20260712185030"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712173919",
+    "Vehicle_Tag": "Q4S8TG",
+    "Assigned_Space": "18",
+    "Exit_Time": "20260712203919",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 9.0,
+        "Method": "Card",
+        "Timestamp": "20260712203939"
+      },
+      {
+        "Amount": 6.0,
+        "Method": "Cash",
+        "Timestamp": "20260712204029"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712182139",
+    "Vehicle_Tag": "83BR1",
+    "Assigned_Space": "13",
+    "Exit_Time": "20260712212139",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260712212209"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260712192636",
+    "Vehicle_Tag": "8LPRSHL",
+    "Assigned_Space": "26",
+    "Exit_Time": "20260712210136",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260712210206"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713060431",
+    "Vehicle_Tag": "625P",
+    "Assigned_Space": "17",
+    "Exit_Time": "20260713081431",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260713081501"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713080939",
+    "Vehicle_Tag": "SZR",
+    "Assigned_Space": "18",
+    "Exit_Time": "20260713110939",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260713111009"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713092306",
+    "Vehicle_Tag": "VKAVQLD",
+    "Assigned_Space": "19",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713100721",
+    "Vehicle_Tag": "Z7D1QGP",
+    "Assigned_Space": "36",
+    "Exit_Time": "20260713130721",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260713130751"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713100919",
+    "Vehicle_Tag": "3NDL",
+    "Assigned_Space": "24",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713104326",
+    "Vehicle_Tag": "XIECYQM",
+    "Assigned_Space": "30",
+    "Exit_Time": "20260713115326",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260713115356"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713110725",
+    "Vehicle_Tag": "YIX4C",
+    "Assigned_Space": "43",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713110858",
+    "Vehicle_Tag": "H1L2W",
+    "Assigned_Space": "22",
+    "Exit_Time": "20260713131858",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Cash",
+        "Timestamp": "20260713131928"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713112428",
+    "Vehicle_Tag": "87SMWI",
+    "Assigned_Space": "25",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713113840",
+    "Vehicle_Tag": "CKA3",
+    "Assigned_Space": "13",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713120352",
+    "Vehicle_Tag": "PDE",
+    "Assigned_Space": "48",
+    "Exit_Time": "20260713133852",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260713133922"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713122914",
+    "Vehicle_Tag": "YU4",
+    "Assigned_Space": "45",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713125234",
+    "Vehicle_Tag": "UU28ZI",
+    "Assigned_Space": "29",
+    "Exit_Time": "20260713140234",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Card",
+        "Timestamp": "20260713140254"
+      },
+      {
+        "Amount": 4.0,
+        "Method": "Card",
+        "Timestamp": "20260713140344"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713141842",
+    "Vehicle_Tag": "T5RJ",
+    "Assigned_Space": "20",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713144615",
+    "Vehicle_Tag": "A1YYLZ2",
+    "Assigned_Space": "39",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713150153",
+    "Vehicle_Tag": "L1M",
+    "Assigned_Space": "15",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713154444",
+    "Vehicle_Tag": "EX25M",
+    "Assigned_Space": "18",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713161608",
+    "Vehicle_Tag": "6CL3E4",
+    "Assigned_Space": "44",
+    "Exit_Time": "20260713182608",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260713182638"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713170255",
+    "Vehicle_Tag": "6EVNX",
+    "Assigned_Space": "33",
+    "Exit_Time": "20260713235930",
+    "Amount_Charged": 38.0,
+    "Amount_Paid": 38.0,
+    "Payments": [
+      {
+        "Amount": 38.0,
+        "Method": "Card",
+        "Timestamp": "20260714000000"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260713192258",
+    "Vehicle_Tag": "MIRTUV",
+    "Assigned_Space": "38",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713194423",
+    "Vehicle_Tag": "2D5",
+    "Assigned_Space": "17",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713205657",
+    "Vehicle_Tag": "7V2Y2",
+    "Assigned_Space": "50",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260713213714",
+    "Vehicle_Tag": "EIW",
+    "Assigned_Space": "22",
+    "Exit_Time": "20260713224714",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 10.0,
+        "Method": "Cash",
+        "Timestamp": "20260713224744"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260714060044",
+    "Vehicle_Tag": "NI2WEH7",
+    "Assigned_Space": "28",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714062154",
+    "Vehicle_Tag": "UD8J0",
+    "Assigned_Space": "28",
+    "Exit_Time": "20260714092154",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 6.0,
+        "Method": "Card",
+        "Timestamp": "20260714092214"
+      },
+      {
+        "Amount": 9.0,
+        "Method": "Card",
+        "Timestamp": "20260714092304"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260714062416",
+    "Vehicle_Tag": "1XLB",
+    "Assigned_Space": "27",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714062918",
+    "Vehicle_Tag": "QHHBBZA",
+    "Assigned_Space": "23",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714063626",
+    "Vehicle_Tag": "ZV0ZGAS",
+    "Assigned_Space": "47",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714065442",
+    "Vehicle_Tag": "K2RRM5I",
     "Assigned_Space": "11",
-    "Exit_Time": "20260711101144",
-    "Amount_Charged": 5.00,
-    "Amount_Paid": null
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
   },
   {
-    "Entry_Time": "20260711115423",
-    "Vehicle_Tag": "YYYU78",
-    "Assigned_Space": "11",
-    "Exit_Time": "20260713175306",
-    "Amount_Charged": 320.00,
-    "Amount_Paid": null
+    "Entry_Time": "20260714072041",
+    "Vehicle_Tag": "RUV8VKR",
+    "Assigned_Space": "42",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
   },
   {
-    "Entry_Time": "20260711123134",
-    "Vehicle_Tag": "A",
-    "Assigned_Space": "12",
-    "Exit_Time": "20260711123145",
-    "Amount_Charged": 5.00,
-    "Amount_Paid": null
+    "Entry_Time": "20260714072520",
+    "Vehicle_Tag": "WVX",
+    "Assigned_Space": "39",
+    "Exit_Time": "20260714102520",
+    "Amount_Charged": 15.0,
+    "Amount_Paid": 15.0,
+    "Payments": [
+      {
+        "Amount": 15.0,
+        "Method": "Card",
+        "Timestamp": "20260714102550"
+      }
+    ]
   },
   {
-    "Entry_Time": "20260711130711",
-    "Vehicle_Tag": "YELLOW",
-    "Assigned_Space": "12",
-    "Exit_Time": "20260712152514",
-    "Amount_Charged": 158.00,
-    "Amount_Paid": null
+    "Entry_Time": "20260714072823",
+    "Vehicle_Tag": "9JS",
+    "Assigned_Space": "48",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
   },
   {
-    "Entry_Time": "20260712172248",
-    "Vehicle_Tag": "AAJ2KL9",
-    "Assigned_Space": "12",
-    "Exit_Time": "20260712172303",
-    "Amount_Charged": 5.00,
-    "Amount_Paid": null
+    "Entry_Time": "20260714073308",
+    "Vehicle_Tag": "GMZ",
+    "Assigned_Space": "37",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714080510",
+    "Vehicle_Tag": "477K",
+    "Assigned_Space": "29",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714082130",
+    "Vehicle_Tag": "PZ3",
+    "Assigned_Space": "16",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714082334",
+    "Vehicle_Tag": "QWQMQQ",
+    "Assigned_Space": "27",
+    "Exit_Time": "20260714132334",
+    "Amount_Charged": 26.0,
+    "Amount_Paid": 26.0,
+    "Payments": [
+      {
+        "Amount": 26.0,
+        "Method": "Card",
+        "Timestamp": "20260714132404"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260714082520",
+    "Vehicle_Tag": "UYQS",
+    "Assigned_Space": "33",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714085834",
+    "Vehicle_Tag": "D7QW3",
+    "Assigned_Space": "40",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714095425",
+    "Vehicle_Tag": "Q2KAP",
+    "Assigned_Space": "37",
+    "Exit_Time": "20260714112925",
+    "Amount_Charged": 10.0,
+    "Amount_Paid": 10.0,
+    "Payments": [
+      {
+        "Amount": 4.0,
+        "Method": "Card",
+        "Timestamp": "20260714112945"
+      },
+      {
+        "Amount": 6.0,
+        "Method": "Cash",
+        "Timestamp": "20260714113035"
+      }
+    ]
+  },
+  {
+    "Entry_Time": "20260714102815",
+    "Vehicle_Tag": "QM5T",
+    "Assigned_Space": "21",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714103401",
+    "Vehicle_Tag": "TFS6",
+    "Assigned_Space": "49",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714103429",
+    "Vehicle_Tag": "7RX",
+    "Assigned_Space": "26",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714104522",
+    "Vehicle_Tag": "34UI9",
+    "Assigned_Space": "14",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260714110102",
+    "Vehicle_Tag": "G1A1D",
+    "Assigned_Space": "34",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
+  },
+  {
+    "Entry_Time": "20260715194242",
+    "Vehicle_Tag": "EEE1K9L",
+    "Assigned_Space": "31",
+    "Exit_Time": null,
+    "Amount_Charged": null,
+    "Amount_Paid": null,
+    "Payments": []
   }
 ]

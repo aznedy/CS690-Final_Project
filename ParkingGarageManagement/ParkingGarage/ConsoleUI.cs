@@ -22,20 +22,22 @@ public class ConsoleUI {
                                 .Title("[bold]What do you want to do?[/]")
                                 .HighlightStyle(new Style(foreground: Color.Yellow))
                                 .AddChoices(new[] {
-                                    "record entry","record exit","spot status","manage subscribers","end"
+                                    "Record Entry","Record Exit","Spot Status","Daily Summary","Manage Subscribers","End"
                                 }));
 
-            if(command=="record entry") {
+            if(command=="Record Entry") {
                 RecordEntry();
-            } else if(command=="record exit") {
+            } else if(command=="Record Exit") {
                 RecordExit();
-            } else if(command=="spot status") {
+            } else if(command=="Spot Status") {
                 ShowSpotStatus();
-            } else if(command=="manage subscribers") {
+            } else if(command=="Daily Summary") {
+                ShowDailySummary();
+            } else if(command=="Manage Subscribers") {
                 ManageSubscribers();
             }
 
-        } while(command!="end");
+        } while(command!="End");
 
         AnsiConsole.MarkupLine("[grey]Goodbye![/]");
     }
@@ -83,11 +85,17 @@ public class ConsoleUI {
         var spot = dataManager.FindAvailableSpot();
         var session = dataManager.RecordEntry(vehicleTag, spot!);
 
+        // Reminder for operator for when the driver was placed in a reserved overflow spot
+        var overflowNote = dataManager.IsReserved(spot!)
+            ? "\n[yellow]Note: general area full - assigned a reserved overflow spot.[/]"
+            : "";
+
         AnsiConsole.Write(new Panel(new Markup(
                 $"Vehicle [aqua]{Markup.Escape(vehicleTag)}[/] entered.\n" +
                 $"Assigned spot: [bold green]{spot}[/]\n" +
                 $"Entry time: {Pretty(session.EntryTime)}\n" +
-                $"Available spots: [green]{dataManager.AvailableSpots()}[/] / {dataManager.GeneralSpots().Count}"))
+                $"Available spots: [green]{dataManager.AvailableSpots()}[/] / {dataManager.GeneralSpots().Count}" +
+                overflowNote))
             .Header("[green]Entry Recorded[/]").BorderColor(Color.Green));
         Pause();
     }
@@ -114,7 +122,8 @@ public class ConsoleUI {
 
         DateTime exitTime = DateTime.Now;
         var breakdown = FeeCalculator.CalculateBreakdown(selectedSession.EntryDateTime(), exitTime, dataManager.RateSchedule);
-        dataManager.RecordExit(selectedSession, exitTime, breakdown.Total);
+        // Record the payment, do not release spot until full fee satisfied.
+        dataManager.SetAmountCharged(selectedSession, breakdown.Total);
 
         var table = new Table().Border(TableBorder.Rounded).BorderColor(Color.Grey);
         table.AddColumn("Item");
@@ -123,7 +132,7 @@ public class ConsoleUI {
         table.AddRow("Vehicle", Markup.Escape(selectedSession.VehicleTag), "");
         table.AddRow("Spot", selectedSession.AssignedSpace, "");
         table.AddRow("Entry", Pretty(selectedSession.EntryTime), "");
-        table.AddRow("Exit", Pretty(selectedSession.ExitTime!), "");
+        table.AddRow("Exit", Pretty(exitTime.ToString("yyyyMMddHHmmss")), "");
         table.AddRow("Duration", $"{(int)breakdown.Duration.TotalHours}h {breakdown.Duration.Minutes}m", "");
         table.AddRow($"Base ({breakdown.BaseHours}h @ ${breakdown.BaseRatePerHour}/h)", "", $"${breakdown.BaseFee}");
         if(breakdown.OvertimeHours > 0) {
@@ -132,8 +141,70 @@ public class ConsoleUI {
         table.AddRow("[bold]Total due[/]", "", $"[bold green]${breakdown.Total}[/]");
         AnsiConsole.Write(table);
 
+        // Collect payment loop
+        CollectPayment(selectedSession);
+
+        // The balance is cleared when all payment sum to total, free spot
+        dataManager.RecordExit(selectedSession, exitTime, breakdown.Total);
+
+        ShowReceipt(selectedSession);
+
         AnsiConsole.MarkupLine($"Available spots: [green]{dataManager.AvailableSpots()}[/] / {dataManager.GeneralSpots().Count}");
         Pause();
+    }
+
+    void CollectPayment(ParkingSession session) {
+        while(session.BalanceDue() > 0m) {
+            AnsiConsole.WriteLine();
+            AnsiConsole.MarkupLine($"Balance due: [bold yellow]${session.BalanceDue():0.00}[/]");
+
+            var method = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("Payment [green]method[/]")
+                        .HighlightStyle(new Style(foreground: Color.Green))
+                        .AddChoices(new[] { "Cash", "Card" }));
+
+            decimal balance = session.BalanceDue();
+            decimal tendered = AnsiConsole.Prompt(
+                    new TextPrompt<decimal>($"Enter [green]{method}[/] amount:")
+                        .PromptStyle("aqua")
+                        .Validate(amount => amount > 0m
+                                    ? ValidationResult.Success()
+                                    : ValidationResult.Error("[red]Amount must be greater than zero.[/]")));
+
+            if(method == "Cash" && tendered > balance) {
+                // Overpayment: credit only the balance, return the rest as change.
+                decimal change = tendered - balance;
+                dataManager.AddPayment(session, balance, method);
+                AnsiConsole.MarkupLine($"[green]Paid ${balance:0.00} cash.[/] Change due: [bold]${change:0.00}[/]");
+            } else {
+                // Card is charged exactly; cash at/under balance is applied as-is.
+                decimal applied = method == "Card" ? Math.Min(tendered, balance) : tendered;
+                dataManager.AddPayment(session, applied, method);
+                if(session.BalanceDue() > 0m) {
+                    AnsiConsole.MarkupLine($"[green]Paid ${applied:0.00} {method.ToLower()}.[/] Remaining: [yellow]${session.BalanceDue():0.00}[/]");
+                } else {
+                    AnsiConsole.MarkupLine($"[green]Paid ${applied:0.00} {method.ToLower()}.[/]");
+                }
+            }
+        }
+        AnsiConsole.MarkupLine("[bold green]Payment complete.[/]");
+    }
+
+    // FR-12: show the itemized payment log for the session.
+    void ShowReceipt(ParkingSession session) {
+        var receipt = new Table().Border(TableBorder.Rounded).BorderColor(Color.Green);
+        receipt.AddColumn("Payment");
+        receipt.AddColumn(new TableColumn("Method").Centered());
+        receipt.AddColumn(new TableColumn("Time").RightAligned());
+        receipt.AddColumn(new TableColumn("Amount").RightAligned());
+        int index = 1;
+        foreach(var payment in session.Payments) {
+            receipt.AddRow($"#{index}", Markup.Escape(payment.Method), Pretty(payment.Timestamp), $"${payment.Amount:0.00}");
+            index++;
+        }
+        receipt.AddRow("[bold]Total paid[/]", "", "", $"[bold green]${session.TotalPaid():0.00}[/]");
+        AnsiConsole.Write(new Panel(receipt).Header("[green]Payment Receipt[/]").BorderColor(Color.Green));
     }
 
     // ------------- Show Spot Status Grid -------------
@@ -167,12 +238,15 @@ public class ConsoleUI {
         Pause();
     }
 
-    // Reserved designation wins: a reserved spot always shows [R]/[U] from subcribers.json
-    // v3 will include assignment of [U] spots, changing to [O], temporarily.
+    // A subscribed reserved spot always shows [R]. An unsubscribed reserved spot
+    // shows [U] when empty, but [O] once an ad hoc guest is parked there via the
     string RenderSpot(string spot) {
         if(dataManager.IsReserved(spot)) {
             if(dataManager.ActiveSubscriberForSpot(spot) != null) {
                 return $"[blue]{spot} [[R]][/]";
+            }
+            if(dataManager.IsSpotOccupied(spot)) {
+                return $"[red]{spot} [[O]][/]";
             }
             return $"[purple]{spot} [[U]][/]";
         }
@@ -180,6 +254,73 @@ public class ConsoleUI {
             return $"[red]{spot} [[O]][/]";
         }
         return $"[green]{spot} [[A]][/]";
+    }
+
+    // ---------------- Daily Activity Summary ----------------
+
+    void ShowDailySummary() {
+        AnsiConsole.Clear();
+        AnsiConsole.Write(new Rule("[aqua]Daily Activity Summary[/]").LeftJustified().RuleStyle("aqua"));
+
+        // Offer the last 7 calendar days (today back through 6 days ago).
+        var days = new List<DateTime>();
+        for(int i = 0; i < 7; i++) {
+            days.Add(DateTime.Today.AddDays(-i));
+        }
+
+        var selectedDay = AnsiConsole.Prompt(
+                new SelectionPrompt<DateTime>()
+                    .Title("Select a [aqua]day[/] to report")
+                    .HighlightStyle(new Style(foreground: Color.Aqua))
+                    .UseConverter(day => day == DateTime.Today
+                        ? $"{day:dddd, MMM dd yyyy} (today)"
+                        : day.ToString("dddd, MMM dd yyyy"))
+                    .AddChoices(days));
+
+        // A day spans 00:00:00 through 23:59:59 of the selected date.
+        int entries = dataManager.Sessions.Count(s => s.EntryDateTime().Date == selectedDay.Date);
+        int exits = dataManager.Sessions.Count(s => s.ExitDateTime()?.Date == selectedDay.Date);
+        decimal revenue = dataManager.PaymentsOn(selectedDay).Sum(p => p.Amount);
+
+        AnsiConsole.WriteLine();
+        AnsiConsole.Write(new Panel(new Markup(
+                $"Date: [bold]{selectedDay:dddd, MMMM dd, yyyy}[/]\n" +
+                $"Total entries: [green]{entries}[/]\n" +
+                $"Total exits: [yellow]{exits}[/]\n" +
+                $"Revenue collected: [bold green]${revenue:0.00}[/]"))
+            .Header("[aqua]Summary[/]").BorderColor(Color.Aqua));
+
+        // Entries per hour, 12 AM through 11 PM.
+        var perHour = new int[24];
+        foreach(var session in dataManager.Sessions) {
+            var entry = session.EntryDateTime();
+            if(entry.Date == selectedDay.Date) {
+                perHour[entry.Hour]++;
+            }
+        }
+
+        AnsiConsole.WriteLine();
+        var amTable = new Table().Border(TableBorder.Rounded).BorderColor(Color.Grey);
+        amTable.AddColumn("Hour");
+        amTable.AddColumn(new TableColumn("Entries").RightAligned());
+        amTable.AddColumn("");
+        var pmTable = new Table().Border(TableBorder.Rounded).BorderColor(Color.Grey);
+        pmTable.AddColumn("Hour");
+        pmTable.AddColumn(new TableColumn("Entries").RightAligned());
+        pmTable.AddColumn("");
+        for(int h = 0; h < 12; h++) {
+            string amLabel = new DateTime(2000, 1, 1, h, 0, 0).ToString("h tt");
+            string amBar = perHour[h] > 0 ? new string('█', perHour[h]) : "";
+            amTable.AddRow(amLabel, perHour[h].ToString(), $"[aqua]{amBar}[/]");
+
+            int pmHour = h + 12;
+            string pmLabel = new DateTime(2000, 1, 1, pmHour, 0, 0).ToString("h tt");
+            string pmBar = perHour[pmHour] > 0 ? new string('█', perHour[pmHour]) : "";
+            pmTable.AddRow(pmLabel, perHour[pmHour].ToString(), $"[aqua]{pmBar}[/]");
+        }
+        AnsiConsole.Write(new Panel(new Columns(amTable, pmTable).Collapse()).Header("[aqua]Entries per Hour[/]").BorderColor(Color.Aqua));
+
+        Pause();
     }
 
     // ---------------- Manage Subscribers ----------------
