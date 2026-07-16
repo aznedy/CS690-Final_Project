@@ -91,6 +91,22 @@ public class DataManager {
         return AllSpots().Where(spot => !IsReserved(spot)).ToList();
     }
 
+    // FR-05: reserved spots with no active subscriber can be handed to ad hoc
+    // guests as overflow when the general area is full. An expired subscriber
+    // leaves the spot [U] (Reserved, Unassigned) and therefore assignable.
+    public List<string> AssignableReservedSpots() {
+        return AllSpots().Where(spot => IsReserved(spot) && ActiveSubscriberForSpot(spot) == null).ToList();
+    }
+
+    // Fill order that leaves an empty spot between vehicles (e.g. 11,13,15,...
+    // then 12,14,...). Reduces door dings versus sequential filling.
+    static List<string> EveryOtherOrder(IEnumerable<string> spots) {
+        var ordered = spots.ToList();
+        var odds = ordered.Where(spot => NormalizeSpot(spot) % 2 == 1);
+        var evens = ordered.Where(spot => NormalizeSpot(spot) % 2 == 0);
+        return odds.Concat(evens).ToList();
+    }
+
     public List<ParkingSession> ActiveSessions() {
         return Sessions.Where(session => session.IsActive()).ToList();
     }
@@ -100,11 +116,17 @@ public class DataManager {
         return ActiveSessions().Any(session => NormalizeSpot(session.AssignedSpace) == n);
     }
 
-    // The lowest-numbered general spot that no active session occupies
-    // TODO: Assign a spot that is further away to currently occupied spots.
-    // Customer statisfaction.
+    // The next spot to assign an ad hoc guest. General spots are handed out
+    // first, filled every-other for spacing (customer satisfaction).
+    // when the general area is full, fall back to reserved spots that have
+    // no active subscriber, likewise filled every-other.
     public string? FindAvailableSpot() {
-        foreach(var spot in GeneralSpots()) {
+        foreach(var spot in EveryOtherOrder(GeneralSpots())) {
+            if(!IsSpotOccupied(spot)) {
+                return spot;
+            }
+        }
+        foreach(var spot in EveryOtherOrder(AssignableReservedSpots())) {
             if(!IsSpotOccupied(spot)) {
                 return spot;
             }
@@ -112,16 +134,23 @@ public class DataManager {
         return null;
     }
 
+    // Free general spots, excludes reserved overflow, used for the display.
     public int AvailableSpots() {
         return GeneralSpots().Count(spot => !IsSpotOccupied(spot));
     }
 
-    // FR-02: no general spot is free
-    public bool IsFull() {
-        return AvailableSpots() <= 0;
+    // Reserved overflow spots currently free for ad hoc use
+    public int AvailableReservedSpots() {
+        return AssignableReservedSpots().Count(spot => !IsSpotOccupied(spot));
     }
 
-    // ---------------- subscribers ----------------
+    // Entry is blocked only when no spot at all can be assigned
+    // V3 - neither a general spot nor a reserved overflow spot.
+    public bool IsFull() {
+        return FindAvailableSpot() == null;
+    }
+
+    // ---------------- Subscribers ----------------
 
     public Subscriber? FindSubscriberByTag(string vehicleTag) {
         return Subscribers.FirstOrDefault(subscriber => subscriber.VehicleTag == vehicleTag);
@@ -144,7 +173,7 @@ public class DataManager {
 
     // ---------------- Entry / Exit ----------------
 
-    // FR-03: record the entry timestamp for an ad hoc guest and assign a spot
+    // Record the entry timestamp for an ad hoc guest and assign a spot
     public ParkingSession RecordEntry(string vehicleTag, string assignedSpace) {
         var session = new ParkingSession {
             EntryTime = DateTime.Now.ToString("yyyyMMddHHmmss"),
@@ -157,9 +186,37 @@ public class DataManager {
         return session;
     }
 
+    // Set the charge owed for a session without finalizing the exit,
+    public void SetAmountCharged(ParkingSession session, decimal amountCharged) {
+        session.AmountCharged = amountCharged;
+        SaveSessions();
+    }
+
+    // Apply a payment and append it to the session's payment log.
+    public Payment AddPayment(ParkingSession session, decimal amount, string method) {
+        var payment = new Payment {
+            Amount = amount,
+            Method = method,
+            Timestamp = DateTime.Now.ToString("yyyyMMddHHmmss")
+        };
+        session.Payments.Add(payment);
+        session.AmountPaid = session.TotalPaid();
+        SaveSessions();
+        return payment;
+    }
+
+    // Finalize the exit once the balance is cleared.
     public void RecordExit(ParkingSession session, DateTime exitTime, decimal amountCharged) {
         session.ExitTime = exitTime.ToString("yyyyMMddHHmmss");
         session.AmountCharged = amountCharged;
         SaveSessions();
     }
+
+    public List<Payment> PaymentsOn(DateTime day) {
+        return Sessions
+            .SelectMany(session => session.Payments)
+            .Where(payment => payment.TimestampDateTime().Date == day.Date)
+            .ToList();
+    }
 }
+

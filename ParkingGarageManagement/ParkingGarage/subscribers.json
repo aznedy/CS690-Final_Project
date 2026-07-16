@@ -1,20 +1,56 @@
 [
   {
-    "Subscriber_Name": "Mister Jones",
-    "Assigned_Spot": "7",
-    "Vehicle_Tag": "LUVTOAD",
+    "Subscriber_Name": "Marcus Bell",
+    "Assigned_Spot": "01",
+    "Vehicle_Tag": "V8TE2",
     "Subscription_Expiry": "20260930"
   },
   {
-    "Subscriber_Name": "Fuzzy Knuckles",
-    "Assigned_Spot": "4",
-    "Vehicle_Tag": "JLLY30",
-    "Subscription_Expiry": "20270228"
+    "Subscriber_Name": "Priya Nair",
+    "Assigned_Spot": "02",
+    "Vehicle_Tag": "QG2UJ",
+    "Subscription_Expiry": "20261130"
   },
   {
-    "Subscriber_Name": "Jack Flores",
-    "Assigned_Spot": "6",
-    "Vehicle_Tag": "BFF8979",
-    "Subscription_Expiry": "20271026"
+    "Subscriber_Name": "Diego Alvarez",
+    "Assigned_Spot": "03",
+    "Vehicle_Tag": "7X56BAA4",
+    "Subscription_Expiry": "20270131"
+  },
+  {
+    "Subscriber_Name": "Owen Wright",
+    "Assigned_Spot": "04",
+    "Vehicle_Tag": "17T8KyX",
+    "Subscription_Expiry": "20270430"
+  },
+  {
+    "Subscriber_Name": "Sophia Rassil",
+    "Assigned_Spot": "05",
+    "Vehicle_Tag": "XYBL",
+    "Subscription_Expiry": "20261015"
+  },
+  {
+    "Subscriber_Name": "Liam Chenyek",
+    "Assigned_Spot": "06",
+    "Vehicle_Tag": "2BF",
+    "Subscription_Expiry": "20270615"
+  },
+  {
+    "Subscriber_Name": "Amara Oakforest",
+    "Assigned_Spot": "07",
+    "Vehicle_Tag": "ANFHPUN",
+    "Subscription_Expiry": "20260831"
+  },
+  {
+    "Subscriber_Name": "North Hampton",
+    "Assigned_Spot": "08",
+    "Vehicle_Tag": "NEQY00J",
+    "Subscription_Expiry": "20271201"
+  },
+  {
+    "Subscriber_Name": "Fuzzy Knuckles",
+    "Assigned_Spot": "09",
+    "Vehicle_Tag": "LUVTOAD",
+    "Subscription_Expiry": "20280802"
   }
 ]

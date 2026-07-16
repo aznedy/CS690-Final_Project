@@ -39,6 +39,18 @@ public class Subscriber {
     }
 }
 
+// FR-12: a single payment against a parking session's charge. A session can
+// have many of these (partial cash/card payments), forming the payment log.
+public class Payment {
+    [JsonPropertyName("Amount")] public decimal Amount { get; set; }
+    [JsonPropertyName("Method")] public string Method { get; set; } = "";
+    [JsonPropertyName("Timestamp")] public string Timestamp { get; set; } = "";
+
+    public DateTime TimestampDateTime() {
+        return DateTime.ParseExact(Timestamp, "yyyyMMddHHmmss", null);
+    }
+}
+
 // A parking session, persisted in ParkingSessions.json.
 // Exit_Time (and the payment fields) stay null until the vehicle exits.
 public class ParkingSession {
@@ -47,7 +59,10 @@ public class ParkingSession {
     [JsonPropertyName("Assigned_Space")] public string AssignedSpace { get; set; } = "";
     [JsonPropertyName("Exit_Time")] public string? ExitTime { get; set; }
     [JsonPropertyName("Amount_Charged")] public decimal? AmountCharged { get; set; }
+    // Amount_Paid is kept as a convenience running total (sum of Payments).
     [JsonPropertyName("Amount_Paid")] public decimal? AmountPaid { get; set; }
+    // V3, payment log, one entry per cash/card payment applied.
+    [JsonPropertyName("Payments")] public List<Payment> Payments { get; set; } = new List<Payment>();
 
     public bool IsActive() {
         return ExitTime == null;
@@ -55,6 +70,24 @@ public class ParkingSession {
 
     public DateTime EntryDateTime() {
         return DateTime.ParseExact(EntryTime, "yyyyMMddHHmmss", null);
+    }
+
+    public DateTime? ExitDateTime() {
+        return ExitTime == null ? null : DateTime.ParseExact(ExitTime, "yyyyMMddHHmmss", null);
+    }
+
+    // FR-12: total applied across the payment log
+    public decimal TotalPaid() {
+        return Payments.Sum(payment => payment.Amount);
+    }
+
+    // FR-10/FR-11: remaining balance the driver must clear before exit
+    public decimal BalanceDue() {
+        return (AmountCharged ?? 0m) - TotalPaid();
+    }
+
+    public bool IsPaidInFull() {
+        return AmountCharged != null && TotalPaid() >= AmountCharged.Value;
     }
 }
 
